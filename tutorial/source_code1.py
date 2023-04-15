@@ -95,7 +95,7 @@ log_interval = 200
 
 for epoch in range(epochs):
     for batch_idx, (data, target) in enumerate(train_loader):
-        loss = trainer.update_params(data.numpy(), target.numpy())
+        loss = trainer.update(data.numpy(), target.numpy())
 
         if batch_idx % log_interval == 0 or batch_idx == len(train_loader):
             print(f"Train Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)} "
